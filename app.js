@@ -29,7 +29,9 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-app.get('/', store.home);
+app.get('/', function(req, res) { 
+  res.render('home', { title: 'Ninja Store de Jonatan' });
+});
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
