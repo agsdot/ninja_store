@@ -3,16 +3,17 @@ extends layout
 block content
   #wrapper
     #logo
-      img(src='/images/logo.png')
+        img(src='/images/logo.png')
     #display
-      #login
-        form(method='post')
-          | Enter your name if you want to be a ninja
-          div
-            input(type='text', name='username')
-            input(type='submit', value='Log In')
+        #login
+            form(method='post')
+                | Enter your name if you want to be a ninja
+                div
+                    input(type='text', name='username')
+                    input(type='submit', value='Log In')
+
     #footer
-      div Copyright © Ninja Store #{+new Data().getFullYear()}
-      a(href='/page?name=about') About
-      |  |
-      a(href='/page?name=contact') Contact Us
+        div Copyright © Ninja Store #{+new Date().getFullYear()}
+        a(href='/page?name=about') About
+        | |
+        a(href='/page?name=contact') Contact Us
