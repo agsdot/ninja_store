@@ -33,6 +33,20 @@ app.get('/', function(req, res) {
   res.render('home', { title: 'Ninja Store de Jonatan' });
 });
 
+app.post('/', store.home_post_handler);
+
+
+app.get('/items', store.items);
+
+app.get('/item/:id', store.item);
+
+app.get('/page', store.page);
+
+app.get('/logout', function(req, res) {
+  delete req.session.username;
+  res.redirect('/');
+});
+
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
